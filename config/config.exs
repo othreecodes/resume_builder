@@ -17,6 +17,13 @@ config :resume_builder, ResumeBuilderWeb.Endpoint,
   pubsub: [name: ResumeBuilder.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
+ config :resume_builder, :phoenix_swagger,
+   swagger_files: %{
+     "priv/static/swagger.json" => [
+       router: ResumeBuilderWeb.Router,     # phoenix routes will be converted to swagger paths
+       endpoint: ResumeBuilderWeb.Endpoint  # (optional) endpoint config used to set host, port and https schemes.
+     ]
+   }
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",

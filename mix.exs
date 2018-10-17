@@ -7,7 +7,7 @@ defmodule ResumeBuilder.Mixfile do
       version: "0.0.1",
       elixir: "~> 1.4",
       elixirc_paths: elixirc_paths(Mix.env),
-      compilers: [:phoenix, :gettext] ++ Mix.compilers,
+      compilers: [:phoenix, :gettext, :phoenix_swagger] ++ Mix.compilers,
       start_permanent: Mix.env == :prod,
       aliases: aliases(),
       deps: deps()
@@ -38,7 +38,9 @@ defmodule ResumeBuilder.Mixfile do
       {:phoenix_ecto, "~> 3.2"},
       {:postgrex, ">= 0.0.0"},
       {:gettext, "~> 0.11"},
-      {:cowboy, "~> 1.0"}
+      {:cowboy, "~> 1.0"},
+      {:phoenix_swagger, "~> 0.8"},
+   {:ex_json_schema, "~> 0.5"} # optional
     ]
   end
 
